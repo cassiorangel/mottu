@@ -5,8 +5,15 @@
         <p class="titulo">Início</p>
     </div>
     <div class="col-md-4">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2 personalizada" type="search" placeholder="Pesquisar" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" [formGroup]="personForm">
+            <input 
+                class="form-control mr-sm-2 personalizada" 
+                type="search" 
+                placeholder="Pesquisar" 
+                formControlName="user"
+                (keyup.enter)="onSearch()" 
+                (blur)="onSearch()"
+                aria-label="Search">
           </form>
       </div>
 </div>
