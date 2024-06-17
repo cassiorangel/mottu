@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Creepster";
+    src: url('../assets/fonts/Creepster-Regular.ttf') format("truetype");
+
+}
+
+.titulo {
+    font-family: "Creepster";
+    color: rgb(42, 207, 185);
+    font-size: 36px;
+    padding-right: 3px;
+    float: left;
+    -webkit-text-stroke: 1px rgb(238, 252, 114);
+}
+
+.topo {
+    text-indent: 18px;
+}
+
+.t-peq {
+    font-family: "Creepster";
+    font-size: 14px;
+    float: left;
+    color: rgb(42, 207, 185);
+    -webkit-text-stroke: 1px rgb(238, 252, 114);
+    margin-top: 18px;
+    padding-right: 3px;
+}
+
+.linha {
+    border-bottom: 1px solid #fff;
+}

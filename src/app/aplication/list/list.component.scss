@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Creepster";
+    src: url('/src/assets/fonts/Creepster-Regular.ttf') format("truetype");
+
+}
+
+.titulo {
+    font-family: "Creepster";
+    -webkit-text-stroke: 0.5px rgb(238, 252, 114);
+    color: rgb(42, 207, 185);
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.topo {
+    margin-top: 20px;
+}
+
+.personalizada {
+    margin-top: 10px;
+    background: #3b3838!important;
+    color: #fff!important;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: #fff;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: #fff;  
+ }
+ 
+ :-ms-input-placeholder {  
+    color: #fff;  
+ }
