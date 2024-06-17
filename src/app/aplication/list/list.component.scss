@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Creepster";
-    src: url('/src/assets/fonts/Creepster-Regular.ttf') format("truetype");
+    src: url('../../../assets/fonts/Creepster-Regular.ttf') format("truetype");
 
 }
 
@@ -36,4 +36,11 @@
  
  :-ms-input-placeholder {  
     color: #fff;  
+ }
+
+ .card-busca {
+    width: 96%;
+    border: 1px solid #ccc;
+    height: 300px;
+    border-radius: 6px;
  }
