@@ -42,6 +42,10 @@ export class ListComponent {
     console.log(this.personForm.value)
   }
 
+  favorite(item: string) {
+    console.log(item)
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

@@ -19,7 +19,7 @@
 <div class="row justify-content-md-center topo">
    
    
-    <div class="col-md-3 card-tm" *ngFor="let item of resultado">
+    <div class="col-md-3 card-tm" *ngFor="let item of resultado" (click)="favorite(item.name)">
         <div class="card-busca">
         
             <img class="img-fluidy" src="{{ item.image }}" alt="">
