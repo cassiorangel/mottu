@@ -17,22 +17,15 @@
 </div>
 
 <div class="row justify-content-md-center topo">
-    <div class="col-md-3">
+   
+   
+    <div class="col-md-3 card-tm" *ngFor="let item of resultado">
         <div class="card-busca">
-            1
+        
+            <img class="img-fluidy" src="{{ item.image }}" alt="">
         </div>
     </div>
 
-    <div class="col-md-3">
-        <div class="card-busca">
-            2
-        </div>
-    </div>
 
-    <div class="col-md-3">
-        <div class="card-busca">
-            3
-        </div>
-    </div>
 </div>    
 
