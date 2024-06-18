@@ -1,11 +1,11 @@
-<div class="row justify-content-md-center topo">
-    <div class="col-md-12">
-        <p class="titulo">Favorito</p>
+<div class="row justify-content-md-center topos">
+    <div class="col-md-9">
+        <p class="titulo">Favoritos</p>
     </div>
 </div>
 
 <div class="row justify-content-md-center topo">
-    <div class="col-md-3 card-tm" *ngFor="let item of data">
+    <div class="col-md-4 card-tm" *ngFor="let item of data">
         <div class="card-busca">            
             <i class="fa fa-heart-o icon-a" *ngIf="!item.favorite" (click)="favorite(item)"></i>
             <i class="fa fa-heart icon-b" *ngIf="item.favorite" (click)="favorite(item)"></i>            
