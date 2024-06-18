@@ -28,9 +28,13 @@ export class ListComponent {
 
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (res: any) => {
+        next: (res: any[]) => {
+          res.map((obj: any) => obj.favorite=false);
           this.resultado = res;
-          console.log(res);
+          console.log(res, 'data')
+
+          //this.aplicationService.setState(res);
+
         },
         error: (error) => {
           console.log('algo errado');

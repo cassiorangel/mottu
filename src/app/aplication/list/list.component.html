@@ -20,15 +20,15 @@
    
    
     <div class="col-md-3 card-tm" *ngFor="let item of resultado" (click)="favorite(item.name)">
-        <div class="card-busca">
         
+        <div class="card-busca">            
+            <i class="fa fa-heart-o icon-a" *ngIf="!item.favorite"></i>
+            <i class="fa fa-heart icon-b" *ngIf="item.favorite"></i>            
             <img class="img-fluidy" src="{{ item.image }}" alt="">
             <p class="name-text">{{ item.name }}</p>
             <span class="sub-texty">{{ item.species }}</span>
-        </div>
-       
+        </div>       
     </div>
-
 
 </div>    
 
