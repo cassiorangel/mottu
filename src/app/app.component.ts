@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AplicationService } from './server/aplication.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ export class AppComponent {
   favoCount = 0;
 
   constructor(
-    private aplicationService: AplicationService
+    private aplicationService: AplicationService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -24,9 +27,10 @@ export class AppComponent {
 
   activeFa(valor: boolean) {
     this.selecaoBt = valor;
-    if(!valor) {
-      alert('Chamou')
+    if(valor) {
+      return this.router.navigate(['list'], { relativeTo: this.route});
     }
+    return this.router.navigate(['list/favorito']);
   }
 
   

@@ -26,7 +26,6 @@ export class ListComponent {
 
     this.aplicationService
       .getPersonagens()
-
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any[]) => {
