@@ -1,0 +1,17 @@
+<div class="row justify-content-md-center topo">
+    <div class="col-md-12">
+        <p class="titulo">Favorito</p>
+    </div>
+</div>
+
+<div class="row justify-content-md-center topo">
+    <div class="col-md-3 card-tm" *ngFor="let item of data">
+        <div class="card-busca">            
+            <i class="fa fa-heart-o icon-a" *ngIf="!item.favorite" (click)="favorite(item)"></i>
+            <i class="fa fa-heart icon-b" *ngIf="item.favorite" (click)="favorite(item)"></i>            
+            <img class="img-fluidy" src="{{ item.image }}" alt="">
+            <p class="name-text">{{ item.name }}</p>
+            <span class="sub-texty">{{ item.species }}</span>
+        </div>       
+    </div>
+</div>  

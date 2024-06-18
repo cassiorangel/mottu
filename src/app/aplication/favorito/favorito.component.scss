@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "Creepster";
+    src: url('../../../assets/fonts/Creepster-Regular.ttf') format("truetype");
+}
+
+.titulo {
+    font-family: "Creepster";
+    -webkit-text-stroke: 0.5px rgb(238, 252, 114);
+    color: rgb(42, 207, 185);
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.topo {
+    margin-top: 20px;
+}
+
+.card-tm {
+    margin-bottom: 34px;
+}
+
+.card-busca {
+    position: relative;
+    width: 96%;
+    border: 1px solid #ccc;
+    background: #000;
+    height: 370px;
+    border-radius: 6px;
+ }
+
+ .img-fluidy {
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+ }
+
+ .icon-a {
+    position: absolute;
+    top:10px;
+    right: 14px;
+    font-size:24px;
+    color: #fff;
+    cursor: pointer;
+  }
+ 
+  .icon-b {
+    position: absolute;
+    top:10px;
+    right: 14px;
+    font-size:24px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .name-text {
+    font-family: "Creepster";
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-indent: 12px;
+    padding-top: 6px;
+  }
+ 
+  .sub-texty {
+    padding-left: 12px!important;
+    color: rgb(105, 99, 99);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
