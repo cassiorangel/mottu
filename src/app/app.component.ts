@@ -24,6 +24,9 @@ export class AppComponent {
 
   activeFa(valor: boolean) {
     this.selecaoBt = valor;
+    if(!valor) {
+      alert('Chamou')
+    }
   }
 
   
