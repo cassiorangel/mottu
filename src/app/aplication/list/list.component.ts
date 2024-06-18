@@ -10,6 +10,7 @@ import { AplicationService } from 'src/app/server/aplication.service';
 })
 export class ListComponent {
   resultado!: any;
+
   private destroy$ = new Subject<void>();
   personForm!: FormGroup;
 
@@ -57,8 +58,15 @@ export class ListComponent {
       });
   }
 
-  favorite(item: string) {
-    console.log(item);
+  favorite(item: any) {
+   
+    if(item.favorite) {
+      return item.favorite = false;
+    }
+    return item.favorite = true;
+
+    
+
   }
 
   ngOnDestroy(): void {
