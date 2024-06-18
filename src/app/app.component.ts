@@ -8,7 +8,7 @@ import { AplicationService } from './server/aplication.service';
 })
 export class AppComponent {
   title = 'mottu';
-
+  selecaoBt: boolean = true;
   favoCount = 0;
 
   constructor(
@@ -21,4 +21,10 @@ export class AppComponent {
       console.log(res)
     })
   }
+
+  activeFa(valor: boolean) {
+    this.selecaoBt = valor;
+  }
+
+  
 }
