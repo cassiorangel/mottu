@@ -6,44 +6,67 @@ import { AplicationService } from 'src/app/server/aplication.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
   resultado!: any;
+
   private destroy$ = new Subject<void>();
   personForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private aplicationService: AplicationService) {}
+    private aplicationService: AplicationService
+  ) {}
 
   ngOnInit() {
-
     this.personForm = this.fb.group({
-      user: ['', Validators.required]
-    })
+      name: ['', Validators.required],
+    });
 
-    this.aplicationService.getPersonagens()
-      
+    this.aplicationService
+      .getPersonagens()
+
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (res: any) => {
+        next: (res: any[]) => {
+          res.map((obj: any) => obj.favorite=false);
           this.resultado = res;
-          console.log(res)   
+          console.log(res, 'data')
+
+          //this.aplicationService.setState(res);
+
         },
         error: (error) => {
           console.log('algo errado');
-        }
+        },
       });
   }
 
   onSearch() {
-    this.personForm.value
-    console.log(this.personForm.value)
+    this.aplicationService
+      .getPersonagens(this.personForm.value?.name)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: (res: any) => {
+          this.resultado = res;
+          console.log(res);
+        },
+        error: (error) => {
+          console.log('algo errado');
+        },
+      });
   }
 
-  favorite(item: string) {
-    console.log(item)
+  favorite(item: any) {
+   
+    if(item.favorite) {
+      return item.favorite = false;
+    }
+    return item.favorite = true;
+
+    
+
   }
 
   ngOnDestroy(): void {

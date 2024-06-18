@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AplicationService } from './server/aplication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mottu';
+
+  constructor(
+    private aplicationService: AplicationService
+  ) {}
+
+  ngOnInit() {
+    this.aplicationService
+  }
 }
