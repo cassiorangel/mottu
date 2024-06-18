@@ -15,11 +15,18 @@ export class AplicationService {
     private http: HttpClient
   ) { }
 
-  getPersonagens() {
-    return this.http.get(`${environment.API}`)
-      .pipe(
-        map((res: any) => res['results'])
-      )
+  getPersonagens(name?: string) {
+    if(name) {
+      return this.listPersonagem(`${environment.API}/?name=${name}`);
+    }
+    return this.listPersonagem(`${environment.API}`);    
+  }
+
+  listPersonagem(url: string) {
+    return this.http.get(`${url}`)
+    .pipe(
+      map((res: any) => res['results'])
+    )
   }
 
   get currentState() {
