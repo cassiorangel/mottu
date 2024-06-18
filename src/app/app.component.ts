@@ -9,11 +9,17 @@ import { AplicationService } from './server/aplication.service';
 export class AppComponent {
   title = 'mottu';
 
+  favoCount = 0;
+
   constructor(
     private aplicationService: AplicationService
   ) {}
 
   ngOnInit() {
-    this.aplicationService
+    this.aplicationService.todos$.subscribe((res: any[]) => {
+      this.favoCount = res.length; 
+      console.log(res.length, 'cont')
+      console.log(res)
+    })
   }
 }

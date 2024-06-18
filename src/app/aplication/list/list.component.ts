@@ -33,9 +33,6 @@ export class ListComponent {
           res.map((obj: any) => obj.favorite=false);
           this.resultado = res;
           console.log(res, 'data')
-
-          //this.aplicationService.setState(res);
-
         },
         error: (error) => {
           console.log('algo errado');
@@ -63,6 +60,9 @@ export class ListComponent {
     if(item.favorite) {
       return item.favorite = false;
     }
+
+    //this.aplicationService.setState(item);
+    this.aplicationService.create(item);
     return item.favorite = true;
 
     

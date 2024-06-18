@@ -2,14 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 
-import { map, BehaviorSubject } from 'rxjs';
+import { map, BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AplicationService {
 
-  public stateArr$ = new BehaviorSubject<any>([]);
+  private _todo$ = new BehaviorSubject<any[]>([]);
+  readonly todos$ = this._todo$.asObservable();
+
+  private todos: any[] = [];
+  private nextId = 0;
 
   constructor(
     private http: HttpClient
@@ -29,17 +33,34 @@ export class AplicationService {
     )
   }
 
-  get currentState() {
-    return this.stateArr$.getValue();
+  create(item: any) {     
+    //Update database
+    this.todos.push(item);
+
+    var reduced: any = [];
+
+    this.todos.forEach((item) => {
+    var duplicated  = reduced.findIndex((redItem: any) => {
+        return item.id == redItem.id;
+    }) > -1;
+
+    if(!duplicated) {
+        reduced.push(item);
+    }
+});
+
+//console.log(Object.assign([], reduced));
+
+    this._todo$.next(Object.assign([], reduced));
   }
 
-  setState(newState: any) {
-    let oldState = this.currentState;
-    console.log('old', oldState);
-    console.log('new', newState);
+  remove(id: number) {
+    this.todos.forEach((t, i) => {
+      if (t.id === id) {
+        this.todos.splice(i, 1);
+      }
+      this._todo$.next(Object.assign([], this.todos));
+    });
 
-    if (JSON.stringify(oldState) !== JSON.stringify(newState)) {
-      this.stateArr$.next(newState);
-    }
   }
 }
