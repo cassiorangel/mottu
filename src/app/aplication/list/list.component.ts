@@ -9,7 +9,7 @@ import { AplicationService } from 'src/app/server/aplication.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-  
+  resultado!: any;
   private destroy$ = new Subject<void>();
   personForm!: FormGroup;
 
@@ -27,8 +27,9 @@ export class ListComponent {
       
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (personagens: any) => {
-          console.log(personagens)   
+        next: (res: any) => {
+          this.resultado = res;
+          console.log(res)   
         },
         error: (error) => {
           console.log('algo errado');

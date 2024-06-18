@@ -38,9 +38,39 @@
     color: #fff;  
  }
 
+ .card-tm {
+    margin-bottom: 34px;
+ }
+
  .card-busca {
     width: 96%;
     border: 1px solid #ccc;
-    height: 300px;
+    background: #000;
+    height: 370px;
     border-radius: 6px;
+ }
+
+ .img-fluidy {
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+ }
+
+ .name-text {
+   font-family: "Creepster";
+   font-size: 20px;
+   margin: 0;
+   padding: 0;
+   color: #fff;
+   text-indent: 12px;
+   padding-top: 6px;
+ }
+
+ .sub-texty {
+   padding-left: 12px!important;
+   color: rgb(105, 99, 99);
+   font-weight: 600;
+   margin: 0;
+   padding: 0;
  }
