@@ -58,6 +58,7 @@ export class ListComponent {
   favorite(item: any) {
    
     if(item.favorite) {
+      this.aplicationService.remove(item.id)
       return item.favorite = false;
     }
 

@@ -18,7 +18,6 @@ export class AppComponent {
   ngOnInit() {
     this.aplicationService.todos$.subscribe((res: any[]) => {
       this.favoCount = res.length; 
-      console.log(res.length, 'cont')
       console.log(res)
     })
   }
