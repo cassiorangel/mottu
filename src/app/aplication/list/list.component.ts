@@ -30,9 +30,9 @@ export class ListComponent {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any[]) => {
-          res.map((obj: any) => obj.favorite=false);
+          res.map((obj: any) => (obj.favorite = false));
           this.resultado = res;
-          console.log(res, 'data')
+          console.log(res, 'data');
         },
         error: (error) => {
           console.log('algo errado');
@@ -56,17 +56,13 @@ export class ListComponent {
   }
 
   favorite(item: any) {
-   
-    if(item.favorite) {
-      return item.favorite = false;
+    if (item.favorite) {
+      this.aplicationService.remove(item.id);
+      return (item.favorite = false);
     }
 
-    //this.aplicationService.setState(item);
     this.aplicationService.create(item);
-    return item.favorite = true;
-
-    
-
+    return (item.favorite = true);
   }
 
   ngOnDestroy(): void {

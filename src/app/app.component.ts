@@ -8,7 +8,7 @@ import { AplicationService } from './server/aplication.service';
 })
 export class AppComponent {
   title = 'mottu';
-
+  selecaoBt: boolean = true;
   favoCount = 0;
 
   constructor(
@@ -18,8 +18,16 @@ export class AppComponent {
   ngOnInit() {
     this.aplicationService.todos$.subscribe((res: any[]) => {
       this.favoCount = res.length; 
-      console.log(res.length, 'cont')
       console.log(res)
     })
   }
+
+  activeFa(valor: boolean) {
+    this.selecaoBt = valor;
+    if(!valor) {
+      alert('Chamou')
+    }
+  }
+
+  
 }

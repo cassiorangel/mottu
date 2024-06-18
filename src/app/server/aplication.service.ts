@@ -5,51 +5,46 @@ import { environment } from '../environments/environment';
 import { map, BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AplicationService {
-
   private _todo$ = new BehaviorSubject<any[]>([]);
   readonly todos$ = this._todo$.asObservable();
 
   private todos: any[] = [];
   private nextId = 0;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getPersonagens(name?: string) {
-    if(name) {
+    if (name) {
       return this.listPersonagem(`${environment.API}/?name=${name}`);
     }
-    return this.listPersonagem(`${environment.API}`);    
+    return this.listPersonagem(`${environment.API}`);
   }
 
   listPersonagem(url: string) {
-    return this.http.get(`${url}`)
-    .pipe(
-      map((res: any) => res['results'])
-    )
+    return this.http.get(`${url}`).pipe(map((res: any) => res['results']));
   }
 
-  create(item: any) {     
+  create(item: any) {
     //Update database
     this.todos.push(item);
 
     var reduced: any = [];
 
     this.todos.forEach((item) => {
-    var duplicated  = reduced.findIndex((redItem: any) => {
-        return item.id == redItem.id;
-    }) > -1;
+      var duplicated =
+        reduced.findIndex((redItem: any) => {
+          return item.id == redItem.id;
+        }) > -1;
 
-    if(!duplicated) {
+      if (!duplicated) {
         reduced.push(item);
-    }
-});
+      }
+    });
 
-//console.log(Object.assign([], reduced));
+    //console.log(Object.assign([], reduced));
 
     this._todo$.next(Object.assign([], reduced));
   }
@@ -61,6 +56,5 @@ export class AplicationService {
       }
       this._todo$.next(Object.assign([], this.todos));
     });
-
   }
 }

@@ -1,78 +1,86 @@
 @font-face {
-    font-family: "Creepster";
-    src: url('../assets/fonts/Creepster-Regular.ttf') format("truetype");
-
+  font-family: "Creepster";
+  src: url("../assets/fonts/Creepster-Regular.ttf") format("truetype");
 }
 
 .titulo {
-    font-family: "Creepster";
-    color: rgb(42, 207, 185);
-    font-size: 36px;
-    padding-right: 3px;
-    float: left;
-    -webkit-text-stroke: 1px rgb(238, 252, 114);
+  font-family: "Creepster";
+  color: rgb(42, 207, 185);
+  font-size: 36px;
+  padding-right: 3px;
+  float: left;
+  -webkit-text-stroke: 1px rgb(238, 252, 114);
 }
 
 .topo {
-    text-indent: 18px;
+  text-indent: 18px;
 }
 
 .t-peq {
-    font-family: "Creepster";
-    font-size: 14px;
-    float: left;
-    color: rgb(42, 207, 185);
-    -webkit-text-stroke: 1px rgb(238, 252, 114);
-    margin-top: 18px;
-    padding-right: 3px;
+  font-family: "Creepster";
+  font-size: 14px;
+  float: left;
+  color: rgb(42, 207, 185);
+  -webkit-text-stroke: 1px rgb(238, 252, 114);
+  margin-top: 18px;
+  padding-right: 3px;
 }
 
 .linha {
-    border-bottom: 1px solid #c2c2c2;
-    width: 100%;
+  border-bottom: 1px solid #c2c2c2;
+  width: 100%;
 }
 
 .bt-fa {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .bt-ic {
-    font-weight: 600;
-    padding-right: 6px;
+  font-weight: 600;
+  padding-right: 6px;
 }
 
 .bt-ica {
-    font-size: 14px;
-    font-weight: 600;
-    padding-right: 6px;
-
+  font-size: 14px;
+  font-weight: 600;
+  padding-right: 6px;
 }
 
-.bti{
-    margin-left: 8px;
-    background: #c2c2c2;
-    color: #000;
-    width: 20px;
-    height: 20px;
-    padding-left: 2px;
-    padding-right: 3px;
-    font-size: 10px;
-    line-height: 1.33;
-    border-radius: 15px;
-
+.bti {
+  margin-left: 8px;
+  background: #fff;
+  color: #000;
+  width: 20px;
+  height: 20px;
+  padding-left: 2px;
+  padding-right: 3px;
+  font-size: 10px;
+  line-height: 1.33;
+  font-weight: 600;
+  border-radius: 15px;
 }
 
-.circle span { 
-    width: 120px;
-    border-radius: 50%;
-    background: #c2c2c2;
-} 
-  
+.circle span {
+  width: 120px;
+  border-radius: 50%;
+  background: #c2c2c2;
+}
+
 .colr {
-    background: #000;
+  background: #000;
 }
 .bt-inicio {
-    background: #fff;
-    color: #000;
-    font-weight: 600;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.selecao {
+  background: #fff !important;
+  color: #000;
+  font-weight: 600;
+}
+.selecao-i {
+    background: #000;
+    color: #fff;
 }

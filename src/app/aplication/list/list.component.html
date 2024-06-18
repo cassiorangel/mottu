@@ -17,9 +17,7 @@
 </div>
 
 <div class="row justify-content-md-center topo">
-   
     <div class="col-md-3 card-tm" *ngFor="let item of resultado">
-        
         <div class="card-busca">            
             <i class="fa fa-heart-o icon-a" *ngIf="!item.favorite" (click)="favorite(item)"></i>
             <i class="fa fa-heart icon-b" *ngIf="item.favorite" (click)="favorite(item)"></i>            

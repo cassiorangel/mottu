@@ -10,9 +10,9 @@
   </div>
   <div class="bt-fa">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary bt-inicio"><i class="fa fa-home bt-ic"></i> Inicio</button>
-      <button type="button" class="btn btn-secondary colr"><i class="fa fa-heart bt-ica"></i> Favoritos  
-        <span class="badge badge-light-circle bti">{{ favoCount }}</span>
+      <button type="button" class="btn btn-secondary bt-inicio" [class.selecao]="selecaoBt" (click)="activeFa(true)"><i class="fa fa-home bt-ic"></i> Inicio</button>
+      <button type="button" class="btn btn-secondary colr" [class.selecao]="!selecaoBt" (click)="activeFa(false)"><i class="fa fa-heart bt-ica"></i> Favoritos  
+        <span class="badge badge-light-circle bti" [class.selecao-i]="!selecaoBt">{{ favoCount }}</span>
         
         </button>
     </div>
