@@ -90,6 +90,16 @@
   color: #fff;
 }
 
+.bord-btn {
+  border-top-left-radius: 10px!important;
+  border-bottom-left-radius: 10px!important;
+}
+
+.bord-btn-rig {
+  border-top-right-radius: 10px!important;
+  border-bottom-right-radius: 10px!important;
+}
+
 @media only screen and (max-width: 766px) {
   .titulo-pn {
     text-align: center;
