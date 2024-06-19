@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-msg-error',
@@ -11,4 +12,11 @@ export class MsgErrorComponent {
   @Input() subtitle: string = 'Volte à página inicial e escolha os melhores para você';
   @Input() visao: boolean = false;
 
+  constructor(
+    private router: Router
+  ) {}
+
+  rota() {
+    this.router.navigate(['/list'])
+  }
 }

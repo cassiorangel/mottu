@@ -4,7 +4,7 @@
             <h3>{{ title }}</h3>
             <h5>{{ subtitle }}</h5>
             <div class="container-bt" *ngIf="visao">
-                <button class="btn btn-light bt-voltar">Voltar ao início</button>
+                <button class="btn btn-light bt-voltar" (click)="rota()">Voltar ao início</button>
             </div>
         </div>       
     </div>
