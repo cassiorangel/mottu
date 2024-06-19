@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
+import { Result, Users } from 'src/app/interfaces/users';
 import { AplicationService } from 'src/app/server/aplication.service';
 
 @Component({
@@ -32,8 +33,8 @@ export class ListComponent {
       .getPersonagens()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (res: any[]) => {
-          res.map((obj: any) => (obj.favorite = false));
+        next: (res: Result[]) => {
+          res.map((obj: Result) => (obj.favorite = false));
           this.resultado = res;
           console.log(res, 'data');
         },
@@ -48,7 +49,7 @@ export class ListComponent {
       .getPersonagens(this.personForm.value?.name)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (res: any) => {
+        next: (res: Result[]) => {
           this.controlVisao = true;
           this.resultado = res;
           console.log(res);

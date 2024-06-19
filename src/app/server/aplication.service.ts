@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
-
-import { map, BehaviorSubject, Subject } from 'rxjs';
+import { map, BehaviorSubject, Observable } from 'rxjs';
+import { Result, Users } from '../interfaces/users';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +23,8 @@ export class AplicationService {
     return this.listPersonagem(`${environment.API}`);
   }
 
-  listPersonagem(url: string) {
-    return this.http.get(`${url}`).pipe(map((res: any) => res['results']));
+  listPersonagem(url: string): Observable<Result[]> {
+    return this.http.get<Result[]>(`${url}`).pipe(map((res: any) => res['results']));
   }
 
   create(item: any) {
