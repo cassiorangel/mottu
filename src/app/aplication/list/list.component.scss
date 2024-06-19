@@ -19,7 +19,8 @@
 }
 
 .topos {
-   margin-top: 20px!important;
+   margin-top: 110px!important;
+   margin-bottom: 10px!important;
 }
 
 .ponty {
@@ -108,7 +109,10 @@
 
  @media only screen and (max-width: 766px) {
    .tela {
-      width: 76%;margin: 0 auto;
+      width: 76%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 140px!important;
       margin-bottom: 16px;
    }
    .titulo-pn {
