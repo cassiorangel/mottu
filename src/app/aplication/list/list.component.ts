@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
+import { Result } from 'src/app/interfaces/users';
 import { AplicationService } from 'src/app/server/aplication.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AplicationService } from 'src/app/server/aplication.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  resultado!: any;
+  resultado: Result[] = [];
   controlVisao: boolean = true;
 
   msg: string = 'Nada foi encontrado';
@@ -25,15 +26,15 @@ export class ListComponent {
 
   ngOnInit() {
     this.personForm = this.fb.group({
-      name: ['', Validators.required],
+      name: [''],
     });
 
     this.aplicationService
       .getPersonagens()
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (res: any[]) => {
-          res.map((obj: any) => (obj.favorite = false));
+        next: (res: Result[]) => {
+          res.map((obj: Result) => (obj.favorite = false));
           this.resultado = res;
           console.log(res, 'data');
         },
@@ -48,7 +49,7 @@ export class ListComponent {
       .getPersonagens(this.personForm.value?.name)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (res: any) => {
+        next: (res: Result[]) => {
           this.controlVisao = true;
           this.resultado = res;
           console.log(res);
