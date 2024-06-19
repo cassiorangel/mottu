@@ -36,7 +36,6 @@ export class ListComponent {
         next: (res: Result[]) => {
           res.map((obj: Result) => (obj.favorite = false));
           this.resultado = res;
-          console.log(res, 'data');
         },
         error: (error) => {          
           console.log('algo errado');

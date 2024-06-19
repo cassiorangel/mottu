@@ -4,17 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'list',
-    loadChildren: () => import('./aplication/aplication.module').then(m => m.AplicationModule)
+    loadChildren: () =>
+      import('./aplication/aplication.module').then((m) => m.AplicationModule),
   },
   {
     path: '',
     redirectTo: '/list/aplication',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
