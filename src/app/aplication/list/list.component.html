@@ -1,4 +1,4 @@
-<div class="row justify-content-md-center topos">
+<div class="row justify-content-md-center topos tela">
     <div class="col-md-5">
         <p class="titulo">Início</p>
     </div>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="row justify-content-md-center topo" *ngIf="controlVisao">
-    <div class="col-md-4 card-tm" *ngFor="let item of resultado">
+    <div class="col-sm-12 card-tm col-md-4" *ngFor="let item of resultado">
         <div class="card-busca">            
             <i class="fa fa-heart-o icon-a" *ngIf="!item.favorite" (click)="favorite(item)"></i>
             <i class="fa fa-heart icon-b" *ngIf="item.favorite" (click)="favorite(item)"></i>            

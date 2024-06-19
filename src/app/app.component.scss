@@ -47,7 +47,7 @@
 }
 
 .personaliza {
-  font-weight: 900!important;
+  font-weight: 900 !important;
 }
 
 .bti {
@@ -86,6 +86,26 @@
   font-weight: 600;
 }
 .selecao-i {
-    background: #000;
-    color: #fff;
+  background: #000;
+  color: #fff;
+}
+
+@media only screen and (max-width: 766px) {
+  .titulo-pn {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+  }
+  .nav-ok {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .pq-bt {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+  }
 }
