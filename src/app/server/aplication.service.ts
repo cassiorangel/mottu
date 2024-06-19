@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { map, BehaviorSubject, Observable } from 'rxjs';
-import { Result, Users } from '../interfaces/users';
+import { Result } from '../interfaces/users';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +11,7 @@ export class AplicationService {
   private _todo$ = new BehaviorSubject<any[]>([]);
   readonly todos$ = this._todo$.asObservable();
 
-  private todos: any[] = [];
-  private nextId = 0;
+  private todos: Result[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -24,11 +23,14 @@ export class AplicationService {
   }
 
   listPersonagem(url: string): Observable<Result[]> {
-    return this.http.get<Result[]>(`${url}`).pipe(map((res: any) => res['results']));
+    return this.http
+      .get<Result[]>(`${url}`)
+      .pipe(map((res: any) => res['results']));
   }
 
-  create(item: any) {
+  create(item: Result) {
     //Update database
+
     this.todos.push(item);
 
     var reduced: any = [];
@@ -43,8 +45,6 @@ export class AplicationService {
         reduced.push(item);
       }
     });
-
-    //console.log(Object.assign([], reduced));
 
     this._todo$.next(Object.assign([], reduced));
   }

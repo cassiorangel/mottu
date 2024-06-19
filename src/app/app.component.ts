@@ -14,17 +14,12 @@ export class AppComponent {
   favoCount = 0;
   private destroy$ = new Subject<void>();
 
-  constructor(
-    private aplicationService: AplicationService
-  ) {}
+  constructor(private aplicationService: AplicationService) {}
 
   ngOnInit() {
     this.aplicationService.todos$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((res: Result[]) => {
-        this.favoCount = res.length;
-        console.log(res, 'olh');
-      });
+      .subscribe((res: Result[]) => (this.favoCount = res.length));
   }
 
   ngOnDestroy(): void {
