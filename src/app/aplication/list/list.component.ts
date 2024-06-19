@@ -10,7 +10,7 @@ import { AplicationService } from 'src/app/server/aplication.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent {
-  resultado!: any;
+  resultado: Result[] = [];
   controlVisao: boolean = true;
 
   msg: string = 'Nada foi encontrado';
