@@ -17,6 +17,6 @@ export class MsgErrorComponent {
   ) {}
 
   rota() {
-    this.router.navigate(['/list'])
+    this.router.navigate(['/list/aplication'])
   }
 }
