@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { Result, Users } from 'src/app/interfaces/users';
+import { Result } from 'src/app/interfaces/users';
 import { AplicationService } from 'src/app/server/aplication.service';
 
 @Component({
@@ -26,7 +26,7 @@ export class ListComponent {
 
   ngOnInit() {
     this.personForm = this.fb.group({
-      name: ['', Validators.required],
+      name: [''],
     });
 
     this.aplicationService
