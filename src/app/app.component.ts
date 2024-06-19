@@ -1,28 +1,33 @@
 import { Component } from '@angular/core';
 import { AplicationService } from './server/aplication.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'mottu';
   selecaoBt: boolean = true;
   favoCount = 0;
+  private destroy$ = new Subject<void>();
 
   constructor(
-    private aplicationService: AplicationService,
-    private router: Router,
-    private route: ActivatedRoute
+    private aplicationService: AplicationService
   ) {}
 
   ngOnInit() {
-    this.aplicationService.todos$.subscribe((res: any[]) => {
-      this.favoCount = res.length; 
-      console.log(res)
-    })
+    this.aplicationService.todos$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((res: any[]) => {
+        this.favoCount = res.length;
+        console.log(res);
+      });
   }
-  
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 }
