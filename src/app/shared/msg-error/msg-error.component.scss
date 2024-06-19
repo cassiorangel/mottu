@@ -39,3 +39,22 @@
     display: block;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 766px) {
+   
+    .letra {
+      margin-top: 20px!important;
+      font-size: 19px!important;
+    }
+
+    .detalhe {
+        font-size: 15px!important;
+    }
+    .tmnho {
+        height: 220px!important;
+    }
+    .tm {
+        margin-top: 30px!important;
+    }
+  }

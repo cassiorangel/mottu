@@ -24,14 +24,5 @@ export class AppComponent {
       console.log(res)
     })
   }
-
-  activeFa(valor: boolean) {
-    this.selecaoBt = valor;
-    if(valor) {
-      return this.router.navigate(['list'], { relativeTo: this.route});
-    }
-    return this.router.navigate(['list/favorito']);
-  }
-
   
 }
