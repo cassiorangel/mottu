@@ -16,7 +16,7 @@
       </div>
 </div>
 
-<div class="row justify-content-md-center topo">
+<div class="row justify-content-md-center topo" *ngIf="controlVisao">
     <div class="col-md-4 card-tm" *ngFor="let item of resultado">
         <div class="card-busca">            
             <i class="fa fa-heart-o icon-a" *ngIf="!item.favorite" (click)="favorite(item)"></i>
@@ -28,4 +28,6 @@
     </div>
 </div>    
 
-
+<div *ngIf="!controlVisao">
+    <app-msg-error [visao]="false" [title]="msg" [subtitle]="texto"></app-msg-error>
+</div>
