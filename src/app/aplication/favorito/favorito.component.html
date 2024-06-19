@@ -16,4 +16,6 @@
     </div>
 </div>  
 
-<app-msg-error [visao]="true"></app-msg-error>
+<div *ngIf="controlVisao">
+    <app-msg-error [visao]="true"></app-msg-error>
+</div>
