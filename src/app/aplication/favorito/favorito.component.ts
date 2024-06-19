@@ -8,6 +8,7 @@ import { AplicationService } from 'src/app/server/aplication.service';
 })
 export class FavoritoComponent {
 
+  controlVisao: boolean = false;
   data: any = [];
 
   constructor(
@@ -16,8 +17,11 @@ export class FavoritoComponent {
 
   ngOnInit() {
     this.aplicationService.todos$.subscribe((res: any[]) => {
-      this.data = res
-      console.log(res, 'pq')
+      this.data = res;
+      if(res.length === 0) {
+        this.controlVisao = true;
+      }
+      //console.log(res.length, 'pq')
     })
   }
 

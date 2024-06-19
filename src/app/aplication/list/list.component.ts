@@ -10,6 +10,10 @@ import { AplicationService } from 'src/app/server/aplication.service';
 })
 export class ListComponent {
   resultado!: any;
+  controlVisao: boolean = true;
+
+  msg: string = 'Nada foi encontrado';
+  texto: string = 'Tente realizar uma nova busca.';
 
   private destroy$ = new Subject<void>();
   personForm!: FormGroup;
@@ -33,7 +37,7 @@ export class ListComponent {
           this.resultado = res;
           console.log(res, 'data');
         },
-        error: (error) => {
+        error: (error) => {          
           console.log('algo errado');
         },
       });
@@ -45,11 +49,13 @@ export class ListComponent {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res: any) => {
+          this.controlVisao = true;
           this.resultado = res;
           console.log(res);
         },
         error: (error) => {
-          console.log('algo errado');
+          this.controlVisao = false;
+          console.log('algo errado busca');
         },
       });
   }

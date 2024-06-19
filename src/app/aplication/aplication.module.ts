@@ -5,6 +5,7 @@ import { AplicationRoutingModule } from './aplication-routing.module';
 import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FavoritoComponent } from './favorito/favorito.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FavoritoComponent } from './favorito/favorito.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ReactiveFormsModule,
     AplicationRoutingModule
   ]

@@ -1,0 +1,41 @@
+.topo {
+    margin-top: 20px;
+    width: 77%;
+    margin: 0 auto;
+}
+
+.card-busca {
+    position: relative;
+    width: 99%;
+    border: 1px solid #ccc;
+    background: #000;
+    height: 470px;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+.card-busca h3 {
+    color: #fff;
+    margin-top: 160px;    
+    text-align: center;
+    font-size: 27px;
+}
+
+.card-busca h5 {
+    color: #b1aeae; 
+    text-align: center;
+    margin-top: 14px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.bt-voltar {   
+   font-weight: 600;
+}
+
+.container-bt {
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
