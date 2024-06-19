@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AplicationService } from './server/aplication.service';
 import { Subject, takeUntil } from 'rxjs';
+import { Result } from './interfaces/users';
 
 @Component({
   selector: 'app-root',
@@ -20,9 +21,9 @@ export class AppComponent {
   ngOnInit() {
     this.aplicationService.todos$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((res: any[]) => {
+      .subscribe((res: Result[]) => {
         this.favoCount = res.length;
-        console.log(res);
+        console.log(res, 'olh');
       });
   }
 
