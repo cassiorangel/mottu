@@ -5,7 +5,7 @@ import { FavoritoComponent } from './favorito/favorito.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'aplication',
     component: ListComponent
   },
   {
