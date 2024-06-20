@@ -8,7 +8,7 @@ import { Result } from '../interfaces/users';
   providedIn: 'root',
 })
 export class AplicationService {
-  private _todo$ = new BehaviorSubject<any[]>([]);
+  private _todo$ = new BehaviorSubject<Result[]>([]);
   readonly todos$ = this._todo$.asObservable();
 
   private todos: Result[] = [];
