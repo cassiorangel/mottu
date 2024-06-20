@@ -51,7 +51,6 @@ export class ListComponent {
         next: (res: Result[]) => {
           this.controlVisao = true;
           this.resultado = res;
-          console.log(res);
         },
         error: (error) => {
           this.controlVisao = false;

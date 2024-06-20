@@ -23,7 +23,6 @@ export class FavoritoComponent {
         if (res.length === 0) {
           this.controlVisao = true;
         }
-        console.log(res, 'papa');
       });
   }
 

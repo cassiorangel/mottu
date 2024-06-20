@@ -89,11 +89,15 @@
 .bord-btn {
   border-top-left-radius: 10px!important;
   border-bottom-left-radius: 10px!important;
+  border-top-right-radius: 0px!important;
+  border-bottom-right-radius: 0px!important;
 }
 
 .bord-btn-rig {
   border-top-right-radius: 10px!important;
   border-bottom-right-radius: 10px!important;
+  border-top-left-radius: 0px!important;
+  border-bottom-left-radius: 0px!important;
 }
 
 @media only screen and (max-width: 766px) {
@@ -128,4 +132,38 @@
   right: 0;
   left: 0;
   z-index: 1030;
+}
+
+.navbar-toggler {
+  margin-right: 10px!important;
+}
+
+.bt-style {
+  margin-right: 30px;
+  width: 100%;
+  text-align: 
+  right;display: block;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+  .titulo-color {
+        display: block;
+        width: 96%;
+        float: right;
+        margin-left: 12px;
+        margin-right: 8px;
+
+        border-top-right-radius: 10px!important;
+        border-bottom-right-radius: 10px!important;
+        border-top-left-radius: 10px!important;
+        border-bottom-left-radius: 10px!important;
+  }
+  .altura-bt {
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+ 
+  
 }

@@ -1,19 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark linha nav-ok navbar-fixed-top">
-  <a class="navbar-brand titulo-pn">
-    <span class="titulo topo"> Rick</span> <span class="t-peq">and</span> <span class="titulo">Morty</span>  </a>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a class="navbar-brand" href="#">
+      <span class="titulo topo"> Rick</span> <span class="t-peq">and</span> <span class="titulo">Morty</span> 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
     
-  </div>
-  <div class="bt-fa pq-bt">
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary bt-inicio bord-btn"  routerLink="/list/aplication" routerLinkActive="selecao"><i class="fa fa-home bt-ic"></i> Inicio</button>
-      <button type="button" class="btn btn-secondary colr bord-btn-rig" routerLink="/list/favorito" routerLinkActive="selecao"><i class="fa fa-heart bt-ica"></i> Favoritos  
-        <span class="badge badge-light-circle bti"><span class="personaliza">{{ favoCount }}</span></span>  
+      <form class="form-inline my-2 my-lg-0 bt-style">
+        <button 
+          type="button" 
+          class="btn btn-secondary bt-inicio bord-btn titulo-color"  
+          routerLink="/list/aplication" 
+          routerLinkActive="selecao">
+          <i class="fa fa-home bt-ic"></i> Inicio
         </button>
+        <button 
+          type="button" 
+          class="btn btn-secondary colr bord-btn-rig titulo-color altura-bt" 
+          routerLink="/list/favorito" 
+          routerLinkActive="selecao">
+          <i class="fa fa-heart bt-ica"></i> Favoritos  
+            <span class="badge badge-light-circle bti">
+              <span class="personaliza">{{ favoCount }}</span>
+            </span>  
+        </button>
+      </form>
     </div>
-  </div>
-</nav>
+  </nav>
 
 <div class="container">
  
