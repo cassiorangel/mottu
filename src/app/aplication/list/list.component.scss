@@ -33,22 +33,23 @@
     background: #3b3838!important;
     color: #fff!important;
     border-radius: 9px!important;
+    border-color: #515353;
 }
 
 ::-webkit-input-placeholder {
-    color: #fff;
+    color: #bbbbbb;
  }
  
  :-moz-placeholder { /* Firefox 18- */
-    color: #fff;  
+    color: #bbbbbb;
  }
  
  ::-moz-placeholder {  /* Firefox 19+ */
-    color: #fff;  
+    color: #bbbbbb;
  }
  
  :-ms-input-placeholder {  
-    color: #fff;  
+    color: #bbbbbb;  
  }
 
  .card-tm {
@@ -58,7 +59,7 @@
  .card-busca {
     position: relative;
     width: 96%;
-    border: 1px solid #ccc;
+    border: 1px solid #515353;
     background: #000;
     height: 370px;
     border-radius: 6px;
